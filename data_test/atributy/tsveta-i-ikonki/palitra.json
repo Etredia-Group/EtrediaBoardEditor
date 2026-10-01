@@ -1,0 +1,35 @@
+{
+  "set": "palitra",
+  "type": "color",
+  "title": "Палитра",
+  "items": {
+    "civilized": {
+      "slug": "civilized",
+      "name": "Цивилизованный",
+      "hex": "#c8b47a",
+      "description": "",
+      "type": "color"
+    },
+    "wild": {
+      "slug": "wild",
+      "name": "Дикий",
+      "hex": "#6f8f5a",
+      "description": "",
+      "type": "color"
+    },
+    "dark": {
+      "slug": "dark",
+      "name": "Тёмный",
+      "hex": "#3a3a4a",
+      "description": "",
+      "type": "color"
+    },
+    "gold": {
+      "slug": "gold",
+      "name": "Золото",
+      "hex": "#d4af37",
+      "description": "",
+      "type": "color"
+    }
+  }
+}

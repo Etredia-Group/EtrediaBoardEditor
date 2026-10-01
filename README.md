@@ -49,10 +49,10 @@ data/
 ```
 
 * Имена каталогов/файлов — транслит кириллицы (`translit.py`).
-* Карточные атрибуты: name, description, flavor, subtype (Any/Tool/Lore/Loan/Margin/
-  Ingredient/Benefactor/Foe/Location…), level, weight, border, reverse, color, icon;
-  списочные: aspects, tags, elements, influences, resources(count/stacks), suppressions,
-  hours, properties, emotions, rules; связи used_in/produces/requires/reflects;
+* Карточные атрибуты (по формату CS Modding wiki): name, description, flavor, border, reverse, color, icon.
+  Ссылки на переиспользуемые цвета/иконки — по slug.
+* Списочные атрибуты: aspects, tags, elements, influences, resources(count), suppressions(count), hours(count), properties(stacks), emotions(count), rules.
+  связи used_in/produces/requires/reflects/alter_ego;
   правила трансмутации (inputs, aspect, duration, result, additional, alternative,
   edge_failure, failure, danger).
 * **Переиспользуемые атрибуты живут отдельными элементами** в наборах типа

@@ -1,0 +1,98 @@
+{
+  "set": "bazovye-aspekty",
+  "type": "aspect",
+  "title": "Базовые аспекты",
+  "items": {
+    "lye": {
+      "slug": "lye",
+      "name": "Жертва (Lye)",
+      "description": "",
+      "keywords": [],
+      "type": "aspect"
+    },
+    "divide": {
+      "slug": "divide",
+      "name": "Разделение (Divide)",
+      "description": "",
+      "keywords": [],
+      "type": "aspect"
+    },
+    "forge": {
+      "slug": "forge",
+      "name": "Кузнец (Forge)",
+      "description": "",
+      "keywords": [],
+      "type": "aspect"
+    },
+    "knock": {
+      "slug": "knock",
+      "name": "Стук (Knock)",
+      "description": "",
+      "keywords": [],
+      "type": "aspect"
+    },
+    "mordant": {
+      "slug": "mordant",
+      "name": "Трагедия (Mordant)",
+      "description": "",
+      "keywords": [],
+      "type": "aspect"
+    },
+    "nectar": {
+      "slug": "nectar",
+      "name": "Нектар (Nectar)",
+      "description": "",
+      "keywords": [],
+      "type": "aspect"
+    },
+    "principle": {
+      "slug": "principle",
+      "name": "Принцип (Principle)",
+      "description": "",
+      "keywords": [],
+      "type": "aspect"
+    },
+    "secret-histories": {
+      "slug": "secret-histories",
+      "name": "Тайные истории",
+      "description": "",
+      "keywords": [],
+      "type": "aspect"
+    },
+    "winter": {
+      "slug": "winter",
+      "name": "Зима (Winter)",
+      "description": "",
+      "keywords": [],
+      "type": "aspect"
+    },
+    "lore": {
+      "slug": "lore",
+      "name": "Лор",
+      "description": "",
+      "keywords": [],
+      "type": "aspect"
+    },
+    "danger": {
+      "slug": "danger",
+      "name": "Опасность",
+      "description": "",
+      "keywords": [],
+      "type": "aspect"
+    },
+    "edge": {
+      "slug": "edge",
+      "name": "Край (Edge)",
+      "description": "",
+      "keywords": [],
+      "type": "aspect"
+    },
+    "ruin": {
+      "slug": "ruin",
+      "name": "Разрушение (Ruin)",
+      "description": "",
+      "keywords": [],
+      "type": "aspect"
+    }
+  }
+}

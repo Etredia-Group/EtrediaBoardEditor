@@ -1,0 +1,31 @@
+{
+  "set": "tegi",
+  "type": "tag",
+  "title": "Теги",
+  "items": {
+    "start": {
+      "slug": "start",
+      "name": "Стартовая",
+      "description": "",
+      "type": "tag"
+    },
+    "tool": {
+      "slug": "tool",
+      "name": "Инструмент",
+      "description": "",
+      "type": "tag"
+    },
+    "lorecard": {
+      "slug": "lorecard",
+      "name": "Лор-карта",
+      "description": "",
+      "type": "tag"
+    },
+    "crucible": {
+      "slug": "crucible",
+      "name": "Тигель",
+      "description": "",
+      "type": "tag"
+    }
+  }
+}

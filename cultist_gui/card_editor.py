@@ -226,7 +226,7 @@ class _NewLocalEditor(tk.Toplevel):
 # Конструктор карты
 # ---------------------------------------------------------------------------
 
-GROUP_SCALARS_1 = ["name", "subtype", "level", "weight", "border", "reverse"]
+GROUP_SCALARS_1 = ["name", "border", "reverse"]
 GROUP_SCALARS_2 = ["description", "flavor"]
 LIST_ORDER = ["aspects", "elements", "influences", "resources", "properties",
               "suppressions", "hours", "emotions", "tags", "rules"]
@@ -351,7 +351,8 @@ class CardEditor(ttk.Frame):
                                  command=self._mark_dirty)
         elif spec["kind"] == "int":
             v = tk.IntVar()
-            cb = ttk.Spinbox(parent, from_=0, to=13, textvariable=v, width=6,
+            lo, hi = spec.get("range", (0, 13))
+            cb = ttk.Spinbox(parent, from_=lo, to=hi, textvariable=v, width=6,
                              command=self._mark_dirty)
         else:  # str (например «Название»)
             v = tk.StringVar()
@@ -478,8 +479,6 @@ class CardEditor(ttk.Frame):
         name = self.card.get("name") or "(без названия)"
         cv.create_text(W // 2, 130, text=name, fill="#e8e0cf",
                        font=("", 13, "bold"), width=W - 40)
-        sub = self.card.get("subtype") or "Any"
-        cv.create_text(W // 2, 155, text=sub, fill="#8a8578", font=("", 9))
         aspects = []
         for it in self.card.get("aspects", []):
             f = self.db.find_element(S.ref_of(it), S.T_ASPECT)
@@ -489,10 +488,12 @@ class CardEditor(ttk.Frame):
         desc = (self.card.get("description") or "")[:160]
         cv.create_text(W // 2, 250, text=desc, fill="#cfc8b8", font=("", 8),
                        width=W - 40, justify="center")
-        lvl = self.card.get("level", 0)
-        cv.create_text(24, H - 24, text=f"L{lvl}", fill="#8a8578", font=("", 9))
-        wt = self.card.get("weight", 0)
-        cv.create_text(W - 24, H - 24, text=f"w{wt}", fill="#8a8578", font=("", 9))
+        bdr = int(self.card.get("border", 0) or 0)
+        cv.create_text(24, H - 24, text=f"border {bdr}", fill="#8a8578",
+                       font=("", 9))
+        if self.card.get("reverse"):
+            cv.create_text(W - 24, H - 24, text="↺ reverse", fill="#8a8578",
+                           font=("", 9))
         cv.create_text(W // 2, H - 24, text="drop: цвет/иконка ↜",
                        fill="#555", font=("", 7))
 
@@ -530,7 +531,8 @@ class CardEditor(ttk.Frame):
                               foreground="#b06000")
         self.draw_preview()
 
-    def save(self, *_a):
+    def save(self, *_a) -> bool:
+        """Сохраняет карту в базу. True при успехе (используется app._on_close)."""
         self._collect_scalars()
         warns = S.validate_card(self.card, self.db.known_slugs())
         # promote локальных new-объектов в переиспользуемые наборы
@@ -542,9 +544,12 @@ class CardEditor(ttk.Frame):
         try:
             card = self.db.promote_new_items(self.card, targets)
         except StorageError as e:
-            messagebox.showerror("Ошибка сохранения", str(e)); return
+            messagebox.showerror("Ошибка сохранения", str(e)); return False
         self.card = card
-        self.db.update_element(self.sid, self.slug, card)
+        try:
+            self.db.update_element(self.sid, self.slug, card)
+        except StorageError as e:
+            messagebox.showerror("Ошибка сохранения", str(e)); return False
         self.dirty = False
         self.lbl_state.config(text="сохранено ✓", foreground="#2a7d2a")
         self.app.tree_panel.refresh()
@@ -554,3 +559,4 @@ class CardEditor(ttk.Frame):
             unresolved = [w for w in warns if "отсутствует" in w]
             if unresolved:
                 messagebox.showwarning("Внимание", "\n".join(unresolved[:8]))
+        return True
