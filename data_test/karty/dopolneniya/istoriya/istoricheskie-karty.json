@@ -1,0 +1,51 @@
+{
+  "set": "istoricheskie-karty",
+  "type": "card",
+  "title": "Исторические карты",
+  "items": {
+    "stuk-v-dver-knock": {
+      "type": "card",
+      "slug": "stuk-v-dver-knock",
+      "schema": 1,
+      "name": "Стук в дверь (Knock)",
+      "description": "Кто-то пришёл. Кто-то всегда приходит.",
+      "flavor": "Три удара. Пауза. Ещё два.",
+      "border": 1,
+      "reverse": false,
+      "color": "wild",
+      "icon": "chalice",
+      "aspects": [
+        {
+          "ref": "knock"
+        },
+        {
+          "ref": "danger"
+        }
+      ],
+      "tags": [],
+      "elements": [],
+      "influences": [
+        {
+          "ref": "dawn"
+        }
+      ],
+      "resources": [
+        {
+          "ref": "fear",
+          "count": 2
+        }
+      ],
+      "suppressions": [],
+      "hours": [],
+      "properties": [],
+      "emotions": [],
+      "rules": [],
+      "used_in": [],
+      "produces": [],
+      "requires": [],
+      "reflects": [],
+      "alter_ego": [],
+      "transmutations": {}
+    }
+  }
+}

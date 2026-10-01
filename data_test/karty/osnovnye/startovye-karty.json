@@ -1,0 +1,194 @@
+{
+  "set": "startovye-karty",
+  "type": "card",
+  "title": "Стартовые карты",
+  "items": {
+    "grout-groat": {
+      "type": "card",
+      "slug": "grout-groat",
+      "schema": 1,
+      "name": "Гроут (Groat)",
+      "description": "Валюта Империи. Пахнет пылью и чужими тайнами.",
+      "flavor": "«Каждая монета помнит руку, что её держала.»",
+      "border": 0,
+      "reverse": false,
+      "color": "civilized",
+      "icon": "sun",
+      "aspects": [
+        {
+          "ref": "nectar"
+        }
+      ],
+      "tags": [
+        {
+          "ref": "start"
+        }
+      ],
+      "elements": [
+        {
+          "ref": "lye"
+        }
+      ],
+      "influences": [],
+      "resources": [
+        {
+          "ref": "groat",
+          "count": 1
+        }
+      ],
+      "suppressions": [],
+      "hours": [],
+      "properties": [],
+      "emotions": [],
+      "rules": [],
+      "used_in": [
+        {
+          "ref": "finansirovanie-perevoda"
+        }
+      ],
+      "produces": [],
+      "requires": [],
+      "reflects": [],
+      "alter_ego": [],
+      "transmutations": {}
+    },
+    "finansirovanie-perevoda": {
+      "type": "card",
+      "slug": "finansirovanie-perevoda",
+      "schema": 1,
+      "name": "Финансирование перевода",
+      "description": "Перевод сомнительного текста о сновидениях.",
+      "flavor": "Язык оригинала знает больше, чем автор.",
+      "border": 1,
+      "reverse": false,
+      "color": "dark",
+      "icon": "key",
+      "aspects": [
+        {
+          "ref": "secret-histories"
+        },
+        {
+          "ref": "principle"
+        }
+      ],
+      "tags": [],
+      "elements": [],
+      "influences": [
+        {
+          "ref": "moon"
+        }
+      ],
+      "resources": [
+        {
+          "ref": "groat",
+          "count": 2
+        },
+        {
+          "ref": "spirit",
+          "count": 1
+        }
+      ],
+      "suppressions": [
+        {
+          "ref": "fear",
+          "count": 1
+        }
+      ],
+      "hours": [],
+      "properties": [
+        {
+          "ref": "unreliable",
+          "stacks": 1
+        }
+      ],
+      "emotions": [],
+      "rules": [],
+      "used_in": [],
+      "produces": [
+        {
+          "ref": "kniga-snov-book-of-dreams"
+        }
+      ],
+      "requires": [
+        {
+          "ref": "grout-groat"
+        }
+      ],
+      "reflects": [],
+      "alter_ego": [],
+      "transmutations": {
+        "Перевод": {
+          "inputs": "Финансирование + Гроут",
+          "aspect": "Тайные истории",
+          "duration": "Долго",
+          "result": "Книга снов",
+          "additional": "Знание",
+          "alternative": "",
+          "edge_failure": "",
+          "failure": "Пепел",
+          "danger": ""
+        }
+      }
+    },
+    "kniga-snov-book-of-dreams": {
+      "type": "card",
+      "slug": "kniga-snov-book-of-dreams",
+      "schema": 1,
+      "name": "Книга снов (Book of Dreams)",
+      "description": "Том, который читает вас в ответ.",
+      "flavor": "На полях — заметки, которых не мог оставить переводчик.",
+      "border": 2,
+      "reverse": false,
+      "color": "dark",
+      "icon": "moon",
+      "aspects": [
+        {
+          "ref": "secret-histories"
+        },
+        {
+          "ref": "winter"
+        }
+      ],
+      "tags": [
+        {
+          "ref": "lorecard"
+        }
+      ],
+      "elements": [],
+      "influences": [
+        {
+          "ref": "moon"
+        },
+        {
+          "ref": "hour"
+        }
+      ],
+      "resources": [],
+      "suppressions": [],
+      "hours": [],
+      "properties": [
+        {
+          "ref": "ineffable",
+          "stacks": 2
+        }
+      ],
+      "emotions": [
+        {
+          "ref": "dread",
+          "count": 1
+        }
+      ],
+      "rules": [],
+      "used_in": [],
+      "produces": [],
+      "requires": [],
+      "reflects": [
+        {
+          "ref": "finansirovanie-perevoda"
+        }
+      ],
+      "alter_ego": [],
+      "transmutations": {}
+    }
+  }
+}

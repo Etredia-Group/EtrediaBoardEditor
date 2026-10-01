@@ -1,0 +1,35 @@
+{
+  "set": "ikonki",
+  "type": "icon",
+  "title": "Иконки",
+  "items": {
+    "sun": {
+      "slug": "sun",
+      "name": "Солнце",
+      "glyph": "☀",
+      "description": "",
+      "type": "icon"
+    },
+    "moon": {
+      "slug": "moon",
+      "name": "Луна",
+      "glyph": "☾",
+      "description": "",
+      "type": "icon"
+    },
+    "key": {
+      "slug": "key",
+      "name": "Ключ",
+      "glyph": "⚷",
+      "description": "",
+      "type": "icon"
+    },
+    "chalice": {
+      "slug": "chalice",
+      "name": "Чаша",
+      "glyph": "🍷",
+      "description": "",
+      "type": "icon"
+    }
+  }
+}

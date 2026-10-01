@@ -1,0 +1,42 @@
+{
+  "set": "vliyaniya",
+  "type": "influence",
+  "title": "Влияния",
+  "items": {
+    "moon": {
+      "slug": "moon",
+      "name": "Луна (Moon)",
+      "description": "",
+      "keywords": [],
+      "type": "influence"
+    },
+    "dawn": {
+      "slug": "dawn",
+      "name": "Рассвет (Dawn)",
+      "description": "",
+      "keywords": [],
+      "type": "influence"
+    },
+    "winter-i": {
+      "slug": "winter-i",
+      "name": "Зима (Winter)",
+      "description": "",
+      "keywords": [],
+      "type": "influence"
+    },
+    "spring": {
+      "slug": "spring",
+      "name": "Весна (Spring)",
+      "description": "",
+      "keywords": [],
+      "type": "influence"
+    },
+    "hour": {
+      "slug": "hour",
+      "name": "Час (Hour)",
+      "description": "",
+      "keywords": [],
+      "type": "influence"
+    }
+  }
+}

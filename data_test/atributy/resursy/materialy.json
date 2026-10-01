@@ -1,0 +1,101 @@
+{
+  "set": "materialy",
+  "type": "resource",
+  "title": "Материалы",
+  "items": {
+    "fear": {
+      "slug": "fear",
+      "name": "Страх (Fear)",
+      "description": "",
+      "flavor": "",
+      "icon": "",
+      "color": "",
+      "tags": [],
+      "properties": [],
+      "type": "resource"
+    },
+    "health": {
+      "slug": "health",
+      "name": "Здоровье (Health)",
+      "description": "",
+      "flavor": "",
+      "icon": "",
+      "color": "",
+      "tags": [],
+      "properties": [],
+      "type": "resource"
+    },
+    "reason": {
+      "slug": "reason",
+      "name": "Рассудок (Reason)",
+      "description": "",
+      "flavor": "",
+      "icon": "",
+      "color": "",
+      "tags": [],
+      "properties": [],
+      "type": "resource"
+    },
+    "passion": {
+      "slug": "passion",
+      "name": "Страсть (Passion)",
+      "description": "",
+      "flavor": "",
+      "icon": "",
+      "color": "",
+      "tags": [],
+      "properties": [],
+      "type": "resource"
+    },
+    "groat": {
+      "slug": "groat",
+      "name": "Гроут (Groat)",
+      "description": "",
+      "flavor": "",
+      "icon": "",
+      "color": "",
+      "tags": [],
+      "properties": [],
+      "type": "resource"
+    },
+    "fuel": {
+      "slug": "fuel",
+      "name": "Топливо (Fuel)",
+      "description": "",
+      "flavor": "",
+      "icon": "",
+      "color": "",
+      "tags": [],
+      "properties": [],
+      "type": "resource"
+    },
+    "spirit": {
+      "slug": "spirit",
+      "name": "Дух (Spirit)",
+      "description": "",
+      "flavor": "",
+      "icon": "",
+      "color": "",
+      "tags": [],
+      "properties": [],
+      "type": "resource"
+    },
+    "dread": {
+      "slug": "dread",
+      "name": "Ужас (Dread)",
+      "description": "",
+      "flavor": "",
+      "icon": "",
+      "color": "",
+      "tags": [],
+      "properties": [],
+      "type": "resource"
+    },
+    "pyl": {
+      "name": "Пыль",
+      "description": "",
+      "slug": "pyl",
+      "type": "resource"
+    }
+  }
+}

@@ -70,15 +70,17 @@ def seed(db: Database) -> None:
         db.add_element(set_inf, {"slug": slug, "name": title,
                                  "description": "", "keywords": []})
 
-    resources = {"fear": ("Страх (Fear)", 1), "health": ("Здоровье (Health)", 1),
-                 "reason": ("Рассудок (Reason)", 1), "passion": ("Страсть (Passion)", 1),
-                 "groat": ("Гроут (Groat)", 1), "fuel": ("Топливо (Fuel)", 1),
-                 "spirit": ("Дух (Spirit)", 1), "dread": ("Ужас (Dread)", 2)}
-    for slug, (title, lvl) in resources.items():
-        db.add_element(set_res, {"slug": slug, "name": title, "level": lvl,
-                                 "description": "", "flavor": "",
-                                 "icon": "", "color": "", "tags": [],
-                                 "properties": []})
+    resources = ["fear", "health", "reason", "passion", "groat", "fuel",
+                 "spirit", "dread"]
+    res_titles = {"fear": "Страх (Fear)", "health": "Здоровье (Health)",
+                  "reason": "Рассудок (Reason)", "passion": "Страсть (Passion)",
+                  "groat": "Гроут (Groat)", "fuel": "Топливо (Fuel)",
+                  "spirit": "Дух (Spirit)", "dread": "Ужас (Dread)"}
+    for slug in resources:
+        db.add_element(set_res, {"slug": slug, "name": res_titles[slug],
+                                "description": "", "flavor": "",
+                                "icon": "", "color": "", "tags": [],
+                                "properties": []})
 
     properties = {"unreliable": "Ненадёжность (Unreliable)",
                   "ineffable": "Невыразимость (Ineffable)",
@@ -110,7 +112,7 @@ def seed(db: Database) -> None:
     groat = _card("Гроут (Groat)",
                   description="Валюта Империи. Пахнет пылью и чужими тайнами.",
                   flavor="«Каждая монета помнит руку, что её держала.»",
-                  subtype="Ingredient", level=1, weight=1, border=0,
+border=0,
                   color="civilized", icon="sun",
                   aspects=[{"ref": "nectar"}],
                   elements=[{"ref": "lye"}],
@@ -122,7 +124,7 @@ def seed(db: Database) -> None:
     fund = _card("Финансирование перевода",
                  description="Перевод сомнительного текста о сновидениях.",
                  flavor="Язык оригинала знает больше, чем автор.",
-                 subtype="Margin", level=2, weight=2, border=1,
+border=1,
                  color="dark", icon="key",
                  aspects=[{"ref": "secret-histories"}, {"ref": "principle"}],
                  influences=[{"ref": "moon"}],
@@ -145,7 +147,7 @@ def seed(db: Database) -> None:
     book = _card("Книга снов (Book of Dreams)",
                  description="Том, который читает вас в ответ.",
                  flavor="На полях — заметки, которых не мог оставить переводчик.",
-                 subtype="Lore", level=3, weight=3, border=2,
+border=2,
                  color="dark", icon="moon",
                  aspects=[{"ref": "secret-histories"}, {"ref": "winter"}],
                  influences=[{"ref": "moon"}, {"ref": "hour"}],
@@ -158,7 +160,7 @@ def seed(db: Database) -> None:
     knock = _card("Стук в дверь (Knock)",
                   description="Кто-то пришёл. Кто-то всегда приходит.",
                   flavor="Три удара. Пауза. Ещё два.",
-                  subtype="Foe", level=1, weight=2, border=1,
+border=1,
                   color="wild", icon="chalice",
                   aspects=[{"ref": "knock"}, {"ref": "danger"}],
                   influences=[{"ref": "dawn"}],

@@ -67,22 +67,18 @@ TYPE_LABELS = {
     T_ICON: "Иконки",
 }
 
-#: Подтипы карт (Type of card в Cultist Simulator)
-CARD_SUBTYPES = ("Any", "Tool", "Lore", "Loan", "Margin", "Ingredient",
-                 "Benefactor", "Foe", "Location")
-
-#: Скалярные атрибуты карты: name -> spec
+#: Скалярные атрибуты карты: name -> spec.
+#: Поля соответствуют реальному JSON карт CS (см. cultistsimulator.fandom.com
+#: /wiki/Modding): Name, Description, Flavor, Border, Reverse, Icon, Color.
+#: Поля level/weight/subtype удалены — их нет в формате игры.
 CARD_SCALARS: Dict[str, Dict[str, Any]] = {
-    "name":        {"kind": "str",  "label": "Название"},
-    "description": {"kind": "str",  "label": "Описание"},
-    "flavor":      {"kind": "str",  "label": "Flavor-текст"},
-    "subtype":     {"kind": "enum", "label": "Подтип", "values": CARD_SUBTYPES},
-    "level":       {"kind": "int",  "label": "Уровень (Secret Levels)"},
-    "weight":      {"kind": "int",  "label": "Вес (Weight)"},
-    "border":      {"kind": "int",  "label": "Рамка (0..3)"},
-    "reverse":     {"kind": "bool", "label": "Обратная сторона"},
-    "color":       {"kind": "color_ref", "label": "Цвет карты"},
-    "icon":        {"kind": "icon_ref",  "label": "Иконка"},
+    "name":        {"kind": "str",  "label": "Название (Name)"},
+    "description": {"kind": "str",  "label": "Описание (Description)"},
+    "flavor":      {"kind": "str",  "label": "Flavor-текст (Flavor)"},
+    "border":      {"kind": "int",  "label": "Рамка (Border, 0..3)"},
+    "reverse":     {"kind": "bool", "label": "Оборот (Reverse)"},
+    "color":       {"kind": "color_ref", "label": "Цвет карты (Color)"},
+    "icon":        {"kind": "icon_ref",  "label": "Иконка (Icon)"},
 }
 
 #: Списочные атрибуты карты: key -> spec

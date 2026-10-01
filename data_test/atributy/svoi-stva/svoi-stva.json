@@ -1,0 +1,35 @@
+{
+  "set": "svoi-stva",
+  "type": "property",
+  "title": "Свойства",
+  "items": {
+    "unreliable": {
+      "slug": "unreliable",
+      "name": "Ненадёжность (Unreliable)",
+      "description": "",
+      "stackable": true,
+      "type": "property"
+    },
+    "ineffable": {
+      "slug": "ineffable",
+      "name": "Невыразимость (Ineffable)",
+      "description": "",
+      "stackable": true,
+      "type": "property"
+    },
+    "bound": {
+      "slug": "bound",
+      "name": "Связанность (Bound)",
+      "description": "",
+      "stackable": true,
+      "type": "property"
+    },
+    "reflective": {
+      "slug": "reflective",
+      "name": "Отражаемость (Reflective)",
+      "description": "",
+      "stackable": true,
+      "type": "property"
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "categories": [
+    {
+      "id": "aspekty",
+      "title": "Аспекты",
+      "parent": "atributy"
+    },
+    {
+      "id": "atributy",
+      "title": "Атрибуты",
+      "parent": ""
+    },
+    {
+      "id": "dopolneniya",
+      "title": "Дополнения",
+      "parent": "karty"
+    },
+    {
+      "id": "istoriya",
+      "title": "История",
+      "parent": "dopolneniya"
+    },
+    {
+      "id": "karty",
+      "title": "Карты",
+      "parent": ""
+    },
+    {
+      "id": "osnovnye",
+      "title": "Основные",
+      "parent": "karty"
+    },
+    {
+      "id": "resursy",
+      "title": "Ресурсы",
+      "parent": "atributy"
+    },
+    {
+      "id": "svoi-stva",
+      "title": "Свойства",
+      "parent": "atributy"
+    },
+    {
+      "id": "tegi",
+      "title": "Теги",
+      "parent": "atributy"
+    },
+    {
+      "id": "tsveta-i-ikonki",
+      "title": "Цвета и иконки",
+      "parent": "atributy"
+    },
+    {
+      "id": "vliyaniya",
+      "title": "Влияния",
+      "parent": "atributy"
+    }
+  ],
+  "sets": [
+    {
+      "id": "bazovye-aspekty",
+      "title": "Базовые аспекты",
+      "category": "aspekty",
+      "type": "aspect"
+    },
+    {
+      "id": "ikonki",
+      "title": "Иконки",
+      "category": "tsveta-i-ikonki",
+      "type": "icon"
+    },
+    {
+      "id": "istoricheskie-karty",
+      "title": "Исторические карты",
+      "category": "istoriya",
+      "type": "card"
+    },
+    {
+      "id": "materialy",
+      "title": "Материалы",
+      "category": "resursy",
+      "type": "resource"
+    },
+    {
+      "id": "palitra",
+      "title": "Палитра",
+      "category": "tsveta-i-ikonki",
+      "type": "color"
+    },
+    {
+      "id": "startovye-karty",
+      "title": "Стартовые карты",
+      "category": "osnovnye",
+      "type": "card"
+    },
+    {
+      "id": "svoi-stva",
+      "title": "Свойства",
+      "category": "svoi-stva",
+      "type": "property"
+    },
+    {
+      "id": "tegi",
+      "title": "Теги",
+      "category": "tegi",
+      "type": "tag"
+    },
+    {
+      "id": "vliyaniya",
+      "title": "Влияния",
+      "category": "vliyaniya",
+      "type": "influence"
+    }
+  ]
+}

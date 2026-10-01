@@ -198,8 +198,11 @@ class TreePanel(ttk.Frame):
         iid = self.tree.identify_row(ev.y)
         if iid:
             self.tree.selection_set(iid)
-        kind, a, b = self.selected()
-        m = tk.Menu(self, tearoff=0)
+            kind, a, b = self.selected()
+        else:
+            self.tree.selection_remove(*self.tree.selection())
+            kind, a, b = "", "", ""
+        m = tk.Menu(self.tree, tearoff=0)   # parent — сам treeview!
         if kind == "":
             m.add_command(label="Новая категория (в корне)",
                           command=lambda: self._new_category(""))
@@ -229,7 +232,10 @@ class TreePanel(ttk.Frame):
                           command=lambda: self._edit_element(a, b))
             m.add_command(label="Удалить элемент",
                           command=lambda: self._delete_element(a, b))
-        m.tk_popup(ev.x_root, ev.y_root)
+        try:
+            m.tk_popup(ev.x_root, ev.y_root)
+        finally:
+            m.grab_release()
 
     def _new_category(self, parent):
         t = ask_title(self, "Новая категория")

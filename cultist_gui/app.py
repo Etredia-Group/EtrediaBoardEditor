@@ -237,13 +237,33 @@ class App(ttk.Frame):
     def _on_close(self):
         dirty = [e for e in self.editors.values() if e.dirty]
         if dirty:
-            if not messagebox.askyesno(
-                    "Выход", f"{'Есть' if len(dirty)>1 else 'Есть'} несохранённые "
-                             "вкладки ({len(dirty)}).\nСохранить и выйти?"):
+            ans = messagebox.askyesnocancel(
+                "Выход",
+                f"Есть несохранённые вкладки ({len(dirty)}).\n"
+                "Сохранить и выйти?")
+            if ans is None:          # Отмена — остаёмся в программе
                 return
-            for e in dirty:
-                e.save()
-        self.db.save()
+            if ans:                  # Да — сохранить всеdirty-вкладки
+                failed = []
+                for e in dirty:
+                    try:
+                        if not e.save():
+                            failed.append(e)
+                    except Exception as ex:
+                        failed.append(e)
+                        print("save error:", ex)
+                if failed:
+                    messagebox.showerror(
+                        "Выход отменён",
+                        f"Не удалось сохранить вкладок: {len(failed)}.\n"
+                        "Проверьте предупреждения и повторите.")
+                    return
+            # Нет — выходим без сохранения
+        try:
+            self.db.save()
+        except Exception as e:
+            messagebox.showerror("Ошибка записи базы", str(e))
+            return
         self.master.destroy()
 
 
